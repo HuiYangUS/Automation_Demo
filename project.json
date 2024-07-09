@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.4.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.174249776",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -46,11 +46,19 @@
     },
     "fileInfoCollection": [
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "2ab219b6-21ca-4263-ad54-119cf7a11d02",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\TestCase_DemoLogin.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e462c491-5cfa-46cb-a1c8-b229d624b00b",
+        "dataVariationFilePath": ".variations\\DemoData_Demo Data.json",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TC_DataDrivenTestDemo.xaml"
       }
     ],
     "saveToCloud": false
