@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Temp" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,1364" sap2010:WorkflowViewState.IdRef="Temp_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Temp" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,1512" sap2010:WorkflowViewState.IdRef="Temp_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -35,6 +35,8 @@
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>System.Numerics</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -97,9 +99,10 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,1299" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,1447" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FirstName" />
       <Variable x:TypeArguments="x:String" Name="LastName" />
@@ -130,7 +133,7 @@
         </ActivityAction>
       </ui:RepeatNumberOfTimesX.Body>
     </ui:RepeatNumberOfTimesX>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DemoDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="450,385" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DemoDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="450,394" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -147,5 +150,6 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[DemoDT]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Demo Data" WorkbookPath="Target\DemoData.xlsx" />
   </Sequence>
 </Activity>
