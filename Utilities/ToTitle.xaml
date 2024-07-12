@@ -28,6 +28,9 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -105,7 +108,7 @@
         <OutArgument x:TypeArguments="x:String">[out_DisplayText]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(in_Data)]</InArgument>
+        <InArgument x:TypeArguments="x:String">[System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(in_Data.ToLower)]</InArgument>
       </Assign.Value>
     </Assign>
   </Sequence>
