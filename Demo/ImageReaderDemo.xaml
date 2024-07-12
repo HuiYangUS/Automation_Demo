@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DemoTestX" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,679" sap2010:WorkflowViewState.IdRef="DemoTestX_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ImageReaderDemo" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,679" sap2010:WorkflowViewState.IdRef="DemoTestX_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -106,16 +106,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LoadImage DisplayName="Load Image" FileName="C:\Users\Hui\Downloads\NA_LOGO.png" sap:VirtualizedContainerService.HintSize="354,117" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[DemoImg]" />
+    <ui:LoadImage DisplayName="Load Image" FileName="C:\Users\Hui\Pictures\Bonus\NA_LOGO.png" sap:VirtualizedContainerService.HintSize="354,117" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[DemoImg]" />
     <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[DemoImg]" NoopExecution="False" Text="[OutputText]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ToTitle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utilities\ToTitle.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Data">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="OutputText" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_DisplayText">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="FilteredText" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Data">[OutputText]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_DisplayText">[FilteredText]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[FilteredText]" />
