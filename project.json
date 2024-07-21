@@ -4,6 +4,7 @@
   "description": "A series of demo processes.",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.Excel.Activities": "[2.23.4]",
     "UiPath.Mail.Activities": "[1.23.1]",
     "UiPath.PDF.Activities": "[3.19.1]",
