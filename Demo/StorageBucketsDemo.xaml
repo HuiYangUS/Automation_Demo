@@ -92,7 +92,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ucas:ReadStorageText TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Path = file name" DisplayName="Read Storage Text" sap:VirtualizedContainerService.HintSize="354,196" sap2010:WorkflowViewState.IdRef="ReadStorageText_1" Path="Citizenship Court Information.txt" Result="[FileContent]" StorageBucketName="DemoConfigs">
+    <ucas:ReadStorageText TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Path = file name" DisplayName="Read Storage Text" sap:VirtualizedContainerService.HintSize="354,196" sap2010:WorkflowViewState.IdRef="ReadStorageText_1" Path="demo.sql" Result="[FileContent]" StorageBucketName="Demo SQL Files">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
