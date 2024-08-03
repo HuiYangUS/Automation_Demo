@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Temp" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,1574" sap2010:WorkflowViewState.IdRef="Temp_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Temp" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,1792" sap2010:WorkflowViewState.IdRef="Temp_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -102,7 +102,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,1509" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,1727" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FirstName" />
       <Variable x:TypeArguments="x:String" Name="LastName" />
@@ -114,7 +114,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:BuildDataTable DataTable="[DemoDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Full_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:AutoIncrement=&quot;true&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;ID&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;First_x0020_Name&gt;Hui&lt;/First_x0020_Name&gt;&#xA;    &lt;Last_x0020_Name&gt;Yang&lt;/Last_x0020_Name&gt;&#xA;    &lt;Full_x0020_Name&gt;Hui Yang&lt;/Full_x0020_Name&gt;&#xA;    &lt;ID&gt;1000&lt;/ID&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:RepeatNumberOfTimesX sap2010:Annotation.AnnotationText="Add random data to DT" DisplayName="Repeat Number of Times" sap:VirtualizedContainerService.HintSize="450,765" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="9" StartAt="1">
+    <ui:RepeatNumberOfTimesX sap2010:Annotation.AnnotationText="Add random data to DT" DisplayName="Repeat Number of Times" sap:VirtualizedContainerService.HintSize="450,765" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="10" StartAt="1">
       <ui:RepeatNumberOfTimesX.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
@@ -138,6 +138,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RepeatNumberOfTimesX>
+    <ui:RemoveDataRow Row="{x:Null}" DataTable="[DemoDT]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0" />
     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Read data to console" DataTable="[DemoDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="450,425" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
