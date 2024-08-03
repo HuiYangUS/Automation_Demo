@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetDataFileFromBucket" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,935" sap2010:WorkflowViewState.IdRef="GetDataFileFromBucket_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetDataFileFromBucket" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,1248" sap2010:WorkflowViewState.IdRef="GetDataFileFromBucket_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -94,7 +94,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,870" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,1183" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DemoDT" />
     </Sequence.Variables>
@@ -122,6 +122,13 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="TargetData.xlsx" />
+    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="TargetData.xlsx" />
+    <ucas:UploadStorageFile FileResource="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Destination = orchestrator file name&#xD;&#xA;Path = local file path" Destination="DemoData.xlsx" DisplayName="Upload Storage File" sap:VirtualizedContainerService.HintSize="450,304" sap2010:WorkflowViewState.IdRef="UploadStorageFile_1" Path="Target\DemoData.xlsx" StorageBucketName="Demo Data Bucket">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ucas:UploadStorageFile>
   </Sequence>
 </Activity>

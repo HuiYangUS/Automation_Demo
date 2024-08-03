@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DemoDB" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,1041" sap2010:WorkflowViewState.IdRef="DemoDB_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DemoDB" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,679" sap2010:WorkflowViewState.IdRef="DemoDB_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -92,9 +92,8 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,976" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="512,594" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:DatabaseConnection" Name="SakilaDBConnect" />
       <Variable x:TypeArguments="sd:DataTable" Name="DemoQueryDT" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -102,19 +101,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="System.Data.Odbc" ConnectionString="Dsn=DEMO_DB;uid=root;pwd=Sly493595@sql" DatabaseConnection="[SakilaDBConnect]" />
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DemoQueryDT]" DisplayName="Run query" ExistingDbConnection="[sakilaDBConnect]" sap:VirtualizedContainerService.HintSize="450,121" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="select * from actor order by first_name limit 15;">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" ConnectionString="Dsn=DEMO_DB;uid=root;pwd=Sly493595@sql" DataTable="[DemoQueryDT]" DisplayName="Run query" sap:VirtualizedContainerService.HintSize="450,121" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="System.Data.Odbc" Sql="SELECT address, district, c.city, n.country, postal_code, phone FROM address AS a&#xD;&#xA;JOIN city AS c ON a.city_id = c.city_id&#xD;&#xA;JOIN country AS n ON c.country_id = n.country_id&#xD;&#xA;WHERE phone IS NOT NULL&#xD;&#xA;LIMIT 10;">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
     </ui:ExecuteQuery>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DemoQueryDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="450,675" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DemoQueryDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="450,385" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="DataRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,488" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="FirstName" />
               <Variable x:TypeArguments="x:String" Name="LastName" />
@@ -124,27 +122,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ToTitle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utilities\ToTitle.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Data">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataRow.Item(&quot;first_name&quot;).ToString" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_DisplayText">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="FirstName" />
-                </OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ToTitle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utilities\ToTitle.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Data">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataRow.Item(&quot;last_name&quot;).ToString" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_DisplayText">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="LastName" />
-                </OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Name = &quot; + FirstName + &quot; &quot; + LastName]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Address: &quot; &amp; DataRow.Item(&quot;address&quot;).ToString &amp; &quot;, &quot; &amp; DataRow.Item(&quot;city&quot;).ToString &amp; &quot;, &quot; &amp; DataRow.Item(&quot;country&quot;).ToString]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
