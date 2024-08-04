@@ -98,7 +98,7 @@
         <OutArgument x:TypeArguments="x:String">[DataText]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">I don't want this.</InArgument>
+        <InArgument x:TypeArguments="x:String">["super nice melons"]</InArgument>
       </Assign.Value>
     </Assign>
     <ucas:WriteStorageText TimeoutMS="{x:Null}" DisplayName="Write Storage Text" sap:VirtualizedContainerService.HintSize="434,209" sap2010:WorkflowViewState.IdRef="WriteStorageText_1" Path="Yabba_Dabba_Doo.txt" StorageBucketName="Demo Data Bucket" Text="[&quot;Updated (&quot; + Today.ToShortDateString + &quot;): &quot; + DataText]" />
