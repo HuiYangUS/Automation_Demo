@@ -55,7 +55,7 @@
         "fileName": "Tests\\TestCase_DemoLogin.xaml"
       },
       {
-        "editingStatus": "Publishable",
+        "editingStatus": "InProgress",
         "testCaseId": "85039716-8c1d-41c0-978c-abe7eaed1fc6",
         "testCaseType": "TestCase",
         "fileName": "Tests\\TC_DemoUnitTest.xaml"
