@@ -120,7 +120,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[&quot;C:\Users\&quot;+Environment.UserName+&quot;\Target\TestResult.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;Test failed (&quot; + Now.ToLongTimeString + &quot;).&quot;]" />
+            <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[&quot;C:\Users\&quot;+Environment.UserName+&quot;\Target\TestResult.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;Test failed (&quot; + Now.ToShortDateString + &quot;)(&quot; + Now. ToLongTimeString +&quot;).&quot;]" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
