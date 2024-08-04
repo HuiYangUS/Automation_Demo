@@ -6,18 +6,18 @@
   "dependencies": {
     "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.Excel.Activities": "[2.23.4]",
-    "UiPath.Mail.Activities": "[1.23.1]",
+    "UiPath.Mail.Activities": "[1.23.10]",
     "UiPath.PDF.Activities": "[3.19.1]",
-    "UiPath.System.Activities": "[23.10.6]",
-    "UiPath.Testing.Activities": "[23.10.1]",
-    "UiPath.UIAutomation.Activities": "[23.10.12]",
+    "UiPath.System.Activities": "[24.10.4]",
+    "UiPath.Testing.Activities": "[24.10.1]",
+    "UiPath.UIAutomation.Activities": "[24.10.2]",
     "UiPath.WebAPI.Activities": "[1.21.0]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.4.0.0",
-  "projectVersion": "1.0.176477122",
+  "projectVersion": "1.0.176484285",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
