@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DemoAPI" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="898,1340" sap2010:WorkflowViewState.IdRef="APIDemo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DemoAPI" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="897,1034" sap2010:WorkflowViewState.IdRef="APIDemo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -98,16 +98,17 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="558,1275" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Demo" sap:VirtualizedContainerService.HintSize="541,969" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OpenWeatherKeyAPI" />
       <Variable x:TypeArguments="x:String" Name="CityName" />
       <Variable x:TypeArguments="x:String" Name="CountryCode" />
       <Variable x:TypeArguments="x:String" Name="DemoEndpoint" />
       <Variable x:TypeArguments="x:Int32" Name="StatusAPI" />
-      <Variable x:TypeArguments="x:String" Name="StrAPI" />
+      <Variable x:TypeArguments="x:String" Name="ResponseAPI" />
       <Variable x:TypeArguments="njl:JObject" Name="WeatherDataJSON" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -115,8 +116,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="496,57" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtGYM/OAiCkuEQHDvcQ6UHAAAAAACAAAAAAAQZgAAAAEAACAAAAC8R4mhwZL6c2GBYYQ6TLdZaM6wYq/zQeKRtSLQypPEzQAAAAAOgAAAAAIAACAAAAAglAG2MxR7bYA7Q+aNjslp7aOcUxWKCbegLNq7OeJ+tTAAAADikVXsOi9+8bPAJk2HbTrBSsDf+dJmkvm3fTJZJdrgDxyqgMBpSwCqGX8dsVOyLctAAAAAMuS7czPXOKma3zrx5snF8fIds2PwdHymTi+keYvKjqFZUDXBrKee/YkREg7wMkzvCgxjgGzjXy1vC6ePOmIhOg==" Result="[OpenWeatherKeyAPI]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="496,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:GetPassword DisplayName="Private: Get Password" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtGYM/OAiCkuEQHDvcQ6UHAAAAAACAAAAAAAQZgAAAAEAACAAAAC8R4mhwZL6c2GBYYQ6TLdZaM6wYq/zQeKRtSLQypPEzQAAAAAOgAAAAAIAACAAAAAglAG2MxR7bYA7Q+aNjslp7aOcUxWKCbegLNq7OeJ+tTAAAADikVXsOi9+8bPAJk2HbTrBSsDf+dJmkvm3fTJZJdrgDxyqgMBpSwCqGX8dsVOyLctAAAAAMuS7czPXOKma3zrx5snF8fIds2PwdHymTi+keYvKjqFZUDXBrKee/YkREg7wMkzvCgxjgGzjXy1vC6ePOmIhOg==" Result="[OpenWeatherKeyAPI]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign - Data Setup" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -138,23 +139,15 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="Sequence - Create Endpoint" sap:VirtualizedContainerService.HintSize="496,225" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[DemoEndpoint]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[String.Format("https://api.openweathermap.org/data/2.5/weather?q={0},{1}&amp;appid={2}", {CityName, CountryCode, OpenWeatherKeyAPI})]</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Sequence>
-    <ui:CreateFile ContinueOnError="{x:Null}" Name="{x:Null}" Output="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="496,165" sap2010:WorkflowViewState.IdRef="CreateFile_1" Path="Target\result.json" />
-    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[DemoEndpoint]" sap:VirtualizedContainerService.HintSize="496,102" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" Result="[StrAPI]" StatusCode="[statusAPI]" TimeoutMS="6000">
+    <Assign DisplayName="Assign - Endpoint" sap:VirtualizedContainerService.HintSize="479,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[DemoEndpoint]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[String.Format("https://api.openweathermap.org/data/2.5/weather?q={0},{1}&amp;appid={2}", {CityName, CountryCode, OpenWeatherKeyAPI})]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[DemoEndpoint]" sap:VirtualizedContainerService.HintSize="479,102" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" Result="[ResponseAPI]" StatusCode="[StatusAPI]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -171,8 +164,8 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="496,122" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[WeatherDataJSON]" JsonString="[StrAPI]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[WeatherDataJSON(&quot;weather&quot;)(0)(&quot;main&quot;)]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[WeatherDataJSON(&quot;main&quot;)(&quot;temp&quot;)]" />
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="479,92" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[WeatherDataJSON]" JsonString="[ResponseAPI]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[WeatherDataJSON(&quot;weather&quot;)(0)(&quot;main&quot;)]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[WeatherDataJSON(&quot;main&quot;)(&quot;temp&quot;)]" />
   </Sequence>
 </Activity>
